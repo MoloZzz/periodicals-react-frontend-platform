@@ -1,22 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
-import Users from './pages/Users';
-import Periodicals from './pages/Periodicals';
-import Subscriptions from './pages/Subscriptions';
-import Payments from './pages/Payments';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+import AdminDashboard from './pages/AdminDashboard';
+import UserDashboard from './pages/UserDashboard';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/users" component={Users} />
-        <Route path="/periodicals" component={Periodicals} />
-        <Route path="/subscriptions" component={Subscriptions} />
-        <Route path="/payments" component={Payments} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/admin_dashboard" element={<AdminDashboard />} />
+        <Route path="/user_dashboard" element={<UserDashboard />} />
       </Routes>
     </Router>
   );
